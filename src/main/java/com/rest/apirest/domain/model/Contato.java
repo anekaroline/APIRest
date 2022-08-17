@@ -1,7 +1,5 @@
 package com.rest.apirest.domain.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,9 +7,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+
 
 @Entity
 @NoArgsConstructor
@@ -26,6 +24,7 @@ public class Contato {
     @NotNull
     private String nome;
     @NotNull
+    @Size(min=11, max=11)
     private String telefone;
     @NotNull
     private String email;
